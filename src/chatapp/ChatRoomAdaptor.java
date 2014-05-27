@@ -50,7 +50,7 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor implements IZone{
         	
             if(message.indexOf(word) != -1)
             {
-                sender.SendChatNotification("Admin", "You are not allowed to use abusive language" , sender.getLocation());
+                sender.SendChatNotification("Admin", "jgn ngomong kasar" , sender.getLocation());
                 result.code = 1;
                 result.description = "Bad Words Used";
                 result.sendResponse = true;
