@@ -49,7 +49,7 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor{
                 result.sendResponse = true;
                 result.sendNotification = false;
                 
-                ChatServerAdaptor.removeUser(sender);
+              //  ChatServerAdaptor.removeUser(sender);
             }
         }
     }
