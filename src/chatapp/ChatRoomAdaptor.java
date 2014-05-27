@@ -36,7 +36,7 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor implements IZone{
     public void handleUserJoinRequest(IUser user, HandlingResult result){
        // System.out.println(user.getName() + " joined room " );
     	 user.SendChatNotification("Admin", "gw kick lu" , user.getLocation());
-        removeUser(user);
+        //removeUser(user);
        
     }
     
