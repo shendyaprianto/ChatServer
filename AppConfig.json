@@ -6,5 +6,6 @@
 	"FlashPolicyPort" : 8430,
 	"AdminUsername" : "admin",
 	"AdminPassword" : "password",
-	"HSQLDBFile" : "HSQLDBFile"
+	"HSQLDBFile" : "HSQLDBFile",
+	"LICENSE_KEY" : "8a96ace3-7223-4546-a"
 }
