@@ -14,6 +14,7 @@ import com.shephertz.app42.server.idomain.IUser;
 
 public class ChatRoomAdaptor extends BaseRoomAdaptor{
     
+	
     private String[] blacklist = {"fuck", "shit", "asshole", "cunt", "fag", "fuk", "fck", "fcuk", "assfuck", "assfucker", "fucker",
                                 "motherfucker", "asscock", "asshead", "asslicker", "asslick", "assnigger", "nigger", "asssucker", "bastard", "bitch", "bitchtits",
                                 "bitches", "bitch", "brotherfucker", "bullshit", "bumblefuck", "buttfucka", "fucka", "buttfucker", "buttfucka", "fagbag", "fagfucker",

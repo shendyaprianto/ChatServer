@@ -15,9 +15,14 @@ public class ChatServerAdaptor extends BaseServerAdaptor{
     @Override
     public void onZoneCreated(IZone _zone)
     {   
-    	
+    	this.zone = zone;
         System.out.println("Zone Created " + _zone.getName() + " with key " + _zone.getAppKey());
-        zone.setAdaptor(new ChatZoneAdaptor());
+        _zone.setAdaptor(new ChatZoneAdaptor());
     }
-   
+    
+    public static void removeUser(IUser user)
+    {
+    	zone.removeUser(user);
+    
+    }
 }
