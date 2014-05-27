@@ -1,10 +1,10 @@
 {
 	"TickTime" : 300,
 	"ListenPort" : 12346,
-	"MasterHost" : 54.245.238.236,
+	"MasterHost" : 54.245.121.114,
 	"LogLevel" : "INFO",
 	"FlashPolicyPort" : 8430,
 	"AdminUsername" : "admin",
 	"AdminPassword" : "password",
-	"LICENSE_KEY" : "8a96ace3-7223-4546-a"
+	"HSQLDBFile" : "D:\GitHub\ChatServer\H"
 }
