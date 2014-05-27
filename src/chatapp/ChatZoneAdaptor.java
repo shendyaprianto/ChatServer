@@ -13,5 +13,8 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     {
         System.out.println("Room Created " + room.getName() + " with ID " + room.getId() );
         room.setAdaptor(new ChatRoomAdaptor());
+        
     }  
+    
+    
 }

@@ -4,11 +4,17 @@
  */
 package chatapp;
 
-import com.shephertz.app42.server.idomain.BaseRoomAdaptor;
-import com.shephertz.app42.server.idomain.HandlingResult;
-import com.shephertz.app42.server.idomain.IUser;
+import java.util.Collection;
+import java.util.HashMap;
 
-public class ChatRoomAdaptor extends BaseRoomAdaptor{
+import com.shephertz.app42.server.idomain.BaseRoomAdaptor;
+import com.shephertz.app42.server.idomain.BaseZoneAdaptor;
+import com.shephertz.app42.server.idomain.HandlingResult;
+import com.shephertz.app42.server.idomain.IRoom;
+import com.shephertz.app42.server.idomain.IUser;
+import com.shephertz.app42.server.idomain.IZone;
+
+public class ChatRoomAdaptor extends BaseRoomAdaptor implements IZone{
     
     private String[] blacklist = {"fuck", "shit", "asshole", "cunt", "fag", "fuk", "fck", "fcuk", "assfuck", "assfucker", "fucker",
                                 "motherfucker", "asscock", "asshead", "asslicker", "asslick", "assnigger", "nigger", "asssucker", "bastard", "bitch", "bitchtits",
@@ -23,20 +29,22 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor{
                                 
     @Override
     public void onUserLeaveRequest(IUser user){
-        System.out.println(user.getName() + " left room " + user.getLocation().getId());
+       // System.out.println(user.getName() + " left room " + user.getLocation().getId());
     }
 
     @Override
     public void handleUserJoinRequest(IUser user, HandlingResult result){
-        System.out.println(user.getName() + " joined room " );
+       // System.out.println(user.getName() + " joined room " );
+        removeUser(user);
     }
     
     @Override
     public void handleChatRequest(IUser sender, String message, HandlingResult result)
     {
-        System.out.println(sender.getName() + " says " + message);
+     //   System.out.println(sender.getName() + " says " + message);
         for(String word:blacklist)
         {
+        	
             if(message.indexOf(word) != -1)
             {
                 sender.SendChatNotification("Admin", "You are not allowed to use abusive language" , sender.getLocation());
@@ -47,4 +55,54 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor{
             }
         }
     }
+
+	public IRoom createRoom(String arg0, int arg1, HashMap<String, Object> arg2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteRoom(String arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String getAppKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Collection<IRoom> getRooms() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getSecret() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Collection<IUser> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void removeUser(IUser arg0) {
+		System.out.println(arg0.getName() + " kicked from room " );
+		
+	}
+
+	public void sendAddUserResponse(IUser arg0, byte arg1, String arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setAdaptor(BaseZoneAdaptor arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }
