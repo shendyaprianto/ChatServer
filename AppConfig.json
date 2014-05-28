@@ -5,6 +5,6 @@
 	"LogLevel" : "INFO",
 	"FlashPolicyPort" : 8430,
 	"AdminUsername" : "admin",
-	"AdminPassword" : "password",
+	"AdminPassword" : "password12",
 	"HSQLDBFile" : "D:\GitHub\ChatServer\H"
 }
