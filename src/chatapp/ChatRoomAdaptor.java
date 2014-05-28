@@ -26,12 +26,7 @@ public class ChatRoomAdaptor extends BaseRoomAdaptor{
                                 , "clusterfuck", "cockass", "cockbite", "cockface", "skank", "skeet", "skullfuck", "slut", "slutbag", "splooge", "twatlips", "twat",
                                 "twats", "twatwaffle", "vaj", "vajayjay", "va-j-j", "wank", "wankjob", "wetback", "whore", "whorebag", "whoreface"};
                        
-    @Override
-    public void handleAddUserRequest(IUser user, String authData, HandlingResult result)   
-    {
-    	  System.out.println(user.getName() + " left room " + user.getLocation().getId());
-    
-    }
+  
     @Override
     public void onUserLeaveRequest(IUser user){
         System.out.println(user.getName() + " left room " + user.getLocation().getId());
