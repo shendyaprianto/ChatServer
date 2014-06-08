@@ -57,7 +57,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                                   
                 }  
             }).start();  */
-        	 result.code = WarpResponseResultCode.PENDING;  
+        	 result.code = WarpResponseResultCode.AUTH_PENDING;  
         	  System.out.println("User PENDING");
     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
                     	{
