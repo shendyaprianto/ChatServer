@@ -5,6 +5,6 @@
 	"LogLevel" : "INFO",
 	"FlashPolicyPort" : 8430,
 	"AdminUsername" : "admin",
-	"AdminPassword" : "password12",
+	"AdminPassword" : "password11",
 	"HSQLDBFile" : "HSQLDBBattleGround"
 }
