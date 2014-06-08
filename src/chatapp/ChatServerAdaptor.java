@@ -4,6 +4,9 @@
  */
 package chatapp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.shephertz.app42.server.domain.Zone;
 import com.shephertz.app42.server.idomain.BaseServerAdaptor;
 import com.shephertz.app42.server.idomain.IUser;
@@ -12,7 +15,7 @@ import com.shephertz.app42.server.idomain.IZone;
 public class ChatServerAdaptor extends BaseServerAdaptor{
 	
 	public static IZone zone;
-	public static java.util.Collection<IUser> users;
+public static List<IUser> users = new ArrayList<IUser>();
     @Override
     public void onZoneCreated(IZone _zone)
     {   
