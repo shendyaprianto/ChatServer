@@ -44,11 +44,11 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                 public void run() {                 
                  	for(IUser userOnZone:ChatServerAdaptor.users)
                     	{
-                    	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
-                    	//	{
-                    	        System.out.println("User Connected : " + userOnZone.getName());    
-                    	
-                    	//	}
+                    		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
+                    		{
+                    	        ChatServerAdaptor.removeUser(userOnZone);
+                    	      
+                    		}
                     		
                     	}
                     	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.users.size()));    
