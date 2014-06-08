@@ -23,21 +23,22 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     @Override  
     public void handleAddUserRequest(IUser user, String authData, HandlingResult result){  
     	 System.out.println("User Requested : " + user.getName() + " with AUTH DATA : " + authData);
-    	 ChatServerAdaptor.removeUser(user);
+    
     	 if(!ChatServerAdaptor.zone.getUsers().isEmpty())
     	 {
     	     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
-    	{
-    	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
-    	//	{
-    	        System.out.println("User Connected : " + userOnZone.getName());    
-    	
-    	//	}
-    		
-    	}
+            	{
+            	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
+            	//	{
+            	        System.out.println("User Connected : " + userOnZone.getName());    
+            	
+            	//	}
+            		
+            	}
     	
     	 
     	 }
+        	 ChatServerAdaptor.removeUser(user);
     
     	 
     }  
