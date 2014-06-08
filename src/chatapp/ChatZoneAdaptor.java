@@ -42,7 +42,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         	 ChatServerAdaptor.removeUser(user);*/
         	 	new Thread(new Runnable() {  
                 public void run() {                 
-                 	for(IUser userOnZone:ChatServerAdaptor.users())
+                 	for(IUser userOnZone:ChatServerAdaptor.users)
                     	{
                     	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                     	//	{
