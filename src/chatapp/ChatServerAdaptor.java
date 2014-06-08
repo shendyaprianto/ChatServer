@@ -22,7 +22,7 @@ public class ChatServerAdaptor extends BaseServerAdaptor{
     
     public static void removeUser(IUser user)
     {
-    	//zone.removeUser(user);
+    	zone.removeUser(user);
     	  System.out.println("User Removed : "+user.getName());
     
     }
