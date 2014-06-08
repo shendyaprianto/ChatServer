@@ -55,16 +55,16 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                         		}
                         	}
                         	
-                    	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.users.size()));    
-                    	
+                    //	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.users.size()));    
+                    //	
                         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
                         ChatServerAdaptor.users.add(user);    
                
                 }  
             }).start();  
         	 result.code = WarpResponseResultCode.AUTH_PENDING;  
-        	  System.out.println("User PENDING");
-    	 
+        //	  System.out.println("User PENDING");
+    	 //
     }  
     
   
