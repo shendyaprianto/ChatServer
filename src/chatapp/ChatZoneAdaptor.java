@@ -57,7 +57,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                                   
                 }  
             }).start();  */
-        	 result.code = WarpResponseResultCode.SUCCESS;  
+        	 result.code = WarpResponseResultCode.PENDING;  
     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
                     	{
                     	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
