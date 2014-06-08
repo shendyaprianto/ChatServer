@@ -22,6 +22,11 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         
     }  
     
+    @Override  
+    public void handleAddUserRequest(IUser user, String authData, HandlingResult result){  
+    	 System.out.println("User Requested : " + user.getName() + " with AUTH DATA : " + authData);
+    }  
+    
   
     
     
