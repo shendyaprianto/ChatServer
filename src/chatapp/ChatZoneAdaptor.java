@@ -42,9 +42,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         	 ChatServerAdaptor.removeUser(user);*/
         	 	new Thread(new Runnable() {  
                 public void run() {                 
-                  if(!ChatServerAdaptor.zone.getUsers().isEmpty())
-            	 {
-            	     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
+                 	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
                     	{
                     	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                     	//	{
@@ -53,9 +51,6 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                     	//	}
                     		
                     	}
-            	
-            	 
-            	 }
                         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
                                   
                 }  
