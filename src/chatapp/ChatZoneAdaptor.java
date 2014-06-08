@@ -10,6 +10,7 @@ import com.shephertz.app42.server.idomain.HandlingResult;
 import com.shephertz.app42.server.idomain.IUser;
 import com.shephertz.app42.server.idomain.IZone;
 import com.shephertz.app42.server.idomain.IRoom;
+import com.shephertz.app42.server.message.WarpResponseResultCode;
 
 public class ChatZoneAdaptor extends BaseZoneAdaptor {
     @Override
@@ -21,10 +22,10 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     }  
     
     @Override  
-    public void handleAddUserRequest(IUser user, String authData, HandlingResult result){  
+    public void handleAddUserRequest(final IUser user, String authData, HandlingResult result){  
     	 System.out.println("User Requested : " + user.getName() + " with AUTH DATA : " + authData);
     
-    	 if(!ChatServerAdaptor.zone.getUsers().isEmpty())
+    	/* if(!ChatServerAdaptor.zone.getUsers().isEmpty())
     	 {
     	     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
             	{
@@ -38,7 +39,15 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	
     	 
     	 }
-        	 ChatServerAdaptor.removeUser(user);
+        	 ChatServerAdaptor.removeUser(user);*/
+        	 	new Thread(new Runnable() {  
+                public void run() {                 
+                  
+                        ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
+                                  
+                }  
+            }).start();  
+        	 result.code = WarpResponseResultCode.AUTH_PENDING;  
     
     	 
     }  
