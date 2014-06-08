@@ -12,7 +12,7 @@ import com.shephertz.app42.server.idomain.IZone;
 public class ChatServerAdaptor extends BaseServerAdaptor{
 	
 	public static IZone zone;
-	public java.util.Collection<IUser> users;
+	public static java.util.Collection<IUser> users;
     @Override
     public void onZoneCreated(IZone _zone)
     {   
