@@ -12,6 +12,7 @@ import com.shephertz.app42.server.idomain.IZone;
 import com.shephertz.app42.server.idomain.IRoom;
 import com.shephertz.app42.server.message.WarpResponseResultCode;
 
+import java.util.Iterator;
 public class ChatZoneAdaptor extends BaseZoneAdaptor {
     @Override
     public void onAdminRoomAdded(IRoom room)
@@ -41,16 +42,18 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	 }
         	 ChatServerAdaptor.removeUser(user);*/
         	 	new Thread(new Runnable() {  
-                public void run() {                 
-                 	for(IUser userOnZone:ChatServerAdaptor.users)
-                    	{
-                    		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
-                    		{
-                    	        ChatServerAdaptor.removeUser(userOnZone);
-                    	      
-                    		}
-                    		
-                    	}
+                public void run() {      
+                    
+                            Iterator<IUser> iter = users.iterator();
+                	        while(iter.hasNext()) {
+                        		IUser userOnZone = iter.next();
+                        		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
+                        		{
+                        	        ChatServerAdaptor.removeUser(userOnZone);
+                        	      
+                        		}
+                        	}
+                        	
                     	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.users.size()));    
                     	
                         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
