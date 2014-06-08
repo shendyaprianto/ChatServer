@@ -44,7 +44,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         	 	new Thread(new Runnable() {  
                 public void run() {      
                     
-                            Iterator<IUser> iter = users.iterator();
+                            Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
                 	        while(iter.hasNext()) {
                         		IUser userOnZone = iter.next();
                         		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
