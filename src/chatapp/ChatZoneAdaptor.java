@@ -40,7 +40,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	 
     	 }
         	 ChatServerAdaptor.removeUser(user);*/
-        	 /*	new Thread(new Runnable() {  
+        	 	new Thread(new Runnable() {  
                 public void run() {                 
                  	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
                     	{
@@ -56,18 +56,9 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
                                   
                 }  
-            }).start();  */
+            }).start();  
         	 result.code = WarpResponseResultCode.AUTH_PENDING;  
         	  System.out.println("User PENDING");
-    	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
-                    	{
-                    	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
-                    	//	{
-                    	         System.out.println("User Connected : " + userOnZone.getName());    
-                    	
-                    	//	}
-                    		
-                    	}
     	 
     }  
     
