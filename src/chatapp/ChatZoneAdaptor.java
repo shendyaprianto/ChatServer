@@ -51,7 +51,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                     	//	}
                     		
                     	}*/
-                    	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.zone.getUsers().size()));    
+                    //	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.zone.getUsers().size()));    
                     	
                         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
                                   
