@@ -28,17 +28,19 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	 {
     	     	for(IUser userOnZone:ChatServerAdaptor.zone.getUsers())
             	{
-            	//	if(userOnZone.getName().equalsIgnoreCase(user.getName()))
-            	//	{
-            	        System.out.println("User Connected : " + userOnZone.getName());    
+            		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
+            		{
+            	 ChatServerAdaptor.removeUser(user);
+            	        
             	
-            	//	}
+            		}
+            	 System.out.println("User Connected : " + userOnZone.getName());   
             		
             	}
     	
     	 
     	 }
-        	 ChatServerAdaptor.removeUser(user);
+        	
     
     	 
     }  
