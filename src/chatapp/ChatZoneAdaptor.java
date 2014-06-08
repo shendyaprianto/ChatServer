@@ -28,7 +28,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
     		{
     		    
-    			ChatServerAdaptor.removeUser(user);
+    		//	ChatServerAdaptor.removeUser(user);
     		break;
     		}
     		
