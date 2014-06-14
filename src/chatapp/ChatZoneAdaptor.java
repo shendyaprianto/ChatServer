@@ -27,14 +27,15 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     {
          System.out.println("User Removed By User : " + user.getName());
           ChatServerAdaptor.removeUser(user);
-          try
-          {
-               ChatServerAdaptor.users.remove(user);
-          }
-          catch(Exception ex)
-          {
-               System.out.println("User Exception : " + ex.toString());
-          }
+          Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
+                	        while(iter.hasNext()) {
+                        		IUser userOnZone = iter.next();
+                        		if(userOnZone.equals(user))
+                        		{
+                                    iter.remove();
+                        	      
+                        		}
+                        	}
     }
     @Override  
     public void handleAddUserRequest(final IUser user, String authData, HandlingResult result){  
@@ -62,7 +63,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                         		IUser userOnZone = iter.next();
                         		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                         		{
-                        		      ChatServerAdaptor.zone.sendAddUserResponse(userOnZone, WarpResponseResultCode.CONNECTION_ERR, "Auth Error Recoverable");  
+                        		    ChatServerAdaptor.zone.sendAddUserResponse(userOnZone, WarpResponseResultCode.CONNECTION_ERR, "Auth Error Recoverable");  
                         	        ChatServerAdaptor.removeUser(userOnZone);
                         	        iter.remove();
                         	      
