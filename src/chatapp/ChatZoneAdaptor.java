@@ -88,6 +88,12 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         
     }
     
+    public void onUserPaused(IUser user)  
+    {
+         System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + authData );
+        
+        
+    }
   
     
     
