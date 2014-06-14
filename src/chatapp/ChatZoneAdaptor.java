@@ -27,16 +27,17 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     {
          
           ChatServerAdaptor.removeUser(user);
-          System.out.println("User Removed By User : " + user.getName() +" ("+String.valueOf(ChatServerAdaptor.users.size())+")");
-        /*  Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
+         
+         Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
                 	        while(iter.hasNext()) {
                         		IUser userOnZone = iter.next();
-                        		if(userOnZone.equals(user))
+                        		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                         		{
                                     iter.remove();
                         	      
                         		}
-                        	}*/
+                        	}
+        System.out.println("User Removed By User : " + user.getName() +" ("+String.valueOf(ChatServerAdaptor.users.size())+")");
     }
     @Override  
     public void handleAddUserRequest(final IUser user, String authData, HandlingResult result){  
