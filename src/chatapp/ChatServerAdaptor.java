@@ -19,9 +19,10 @@ public static List<IUser> users = new ArrayList<IUser>();
     @Override
     public void onZoneCreated(IZone _zone)
     {   
-    	zone = _zone;
-        System.out.println("Zone Created " + zone.getName() + " with key " + zone.getAppKey());
-        zone.setAdaptor(new ChatZoneAdaptor());
+    
+        //System.out.println("Zone Created " + zone.getName() + " with key " + zone.getAppKey());
+        _zone.setAdaptor(new ChatZoneAdaptor());
+        	zone = _zone;
     }
     
     public static void removeUser(IUser user)
