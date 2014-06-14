@@ -33,7 +33,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
           }
           catch(Exception ex)
           {
-              
+               System.out.println("User Exception : " + ex.toString());
           }
     }
     @Override  
