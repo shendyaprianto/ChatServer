@@ -25,7 +25,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     @Override
     public void onUserRemoved(IUser user)  
     {
-         System.out.println("User Removed By System : " + user.getName());
+         System.out.println("User Removed By User : " + user.getName());
           ChatServerAdaptor.removeUser(user);
           try
           {
