@@ -63,6 +63,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                         		IUser userOnZone = iter.next();
                         		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                         		{
+                        		      ChatServerAdaptor.zone.sendAddUserResponse(userOnZone, WarpResponseResultCode.CONNECTION_ERROR_RECOVERABLE, "Auth Error Recoverable");  
                         	        ChatServerAdaptor.removeUser(userOnZone);
                         	        iter.remove();
                         	      
