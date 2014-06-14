@@ -82,12 +82,14 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	 //
     }  
     
+     @Override  
     public void handleResumeUserRequest(IUser user, String authData, HandlingResult result)  
     {
          System.out.println("User Requested Resume Connection : " + user.getName() + " with AUTH DATA : " + authData );
         
     }
     
+     @Override  
     public void onUserPaused(IUser user)  
     {
          System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + authData );
