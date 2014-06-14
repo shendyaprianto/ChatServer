@@ -43,7 +43,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     public void handleAddUserRequest(final IUser user, String authData, HandlingResult result){  
     	 System.out.println("User Requested : " + user.getName() + " in Zone : " + ChatServerAdaptor.zone.getName() );
     	user.setCustomData(authData);
-        /*	 	new Thread(new Runnable() {  
+        	 	new Thread(new Runnable() {  
                 public void run() {      
                     
                             Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
@@ -65,12 +65,12 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
                
                 }  
             }).start();  
-        	 result.code = WarpResponseResultCode.AUTH_PENDING;  */
+        	 result.code = WarpResponseResultCode.AUTH_PENDING;  
         //	  System.out.println("User PENDING");
     	 //
     }  
     
-    /* @Override  
+     @Override  
     public void handleResumeUserRequest(IUser user, String authData, HandlingResult result)  
     {
          System.out.println("User Requested Resume Connection : " + user.getName() + " with AUTH DATA : " + authData );
@@ -83,7 +83,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
          System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + user.getCustomData() );
          ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.CONNECTION_ERROR_RECOVERABLE, "Waiting for recover");  
         
-    }*/
+    }
   
     
     
