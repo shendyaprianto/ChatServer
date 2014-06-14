@@ -27,6 +27,14 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     {
          System.out.println("User Removed By System : " + user.getName());
           ChatServerAdaptor.removeUser(user);
+          try
+          {
+               ChatServerAdaptor.users.remove(user);
+          }
+          catch(Exception ex)
+          {
+              
+          }
     }
     @Override  
     public void handleAddUserRequest(final IUser user, String authData, HandlingResult result){  
