@@ -81,7 +81,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     public void onUserPaused(IUser user)  
     {
          System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + user.getCustomData() );
-        
+         ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.CONNECTION_ERROR_RECOVERABLE, "Waiting for recover");  
         
     }
   
