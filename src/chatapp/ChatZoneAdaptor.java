@@ -82,6 +82,12 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	 //
     }  
     
+    public void handleResumeUserRequest(IUser user, String authData, HandlingResult result)  
+    {
+         System.out.println("User Requested Resume Connection : " + user.getName() + " with AUTH DATA : " + authData );
+        
+    }
+    
   
     
     
