@@ -73,14 +73,16 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
      @Override  
     public void handleResumeUserRequest(IUser user, String authData, HandlingResult result)  
     {
-         System.out.println("User Requested Resume Connection : " + user.getName() + " with AUTH DATA : " + authData );
+        // System.out.println("User Requested Resume Connection : " + user.getName() + " with AUTH DATA : " + authData );
+          ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS_RECOVERED, "Recoverred Success");  
+       
         
     }
     
      @Override  
     public void onUserPaused(IUser user)  
     {
-         System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + user.getCustomData() );
+       //  System.out.println("User Paused : " + user.getName() + " with AUTH DATA : " + user.getCustomData() );
          ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.CONNECTION_ERROR_RECOVERABLE, "Waiting for recover");  
         
     }
