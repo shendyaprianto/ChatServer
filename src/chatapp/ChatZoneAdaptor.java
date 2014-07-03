@@ -35,19 +35,23 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     	user.setCustomData(authData);
         	 	new Thread(new Runnable() {  
                 public void run() {      
-                    
+                    	boolean dupe=false;
+                    	IUser userToRemove;
                             Iterator<IUser> iter = ChatServerAdaptor.zone.getUsers().iterator();
                 	        while(iter.hasNext()) {
                         		IUser userOnZone = iter.next();
+                        	
                         		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                         		{
                         		    ChatServerAdaptor.zone.sendAddUserResponse(userOnZone, WarpResponseResultCode.CONNECTION_ERR, "Auth Error Recoverable");  
-                        		    ChatServerAdaptor.zone.removeUser(userOnZone);
-                        	        iter.remove();
-                        	      
+                            		  dupe=true;
+                            		  userToRemove = userOnZone;
+                        	        break;  
                         		}
+                        		
                         	}
-                        	
+                        	if(dupe)
+                        	    ChatServerAdaptor.zone.removeUser(userToRemove);
                              ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
                        
                
