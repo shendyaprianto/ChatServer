@@ -26,17 +26,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
     public void onUserRemoved(IUser user)  
     {
          
-          ChatServerAdaptor.removeUser(user);
-         
-         Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
-                	        while(iter.hasNext()) {
-                        		IUser userOnZone = iter.next();
-                        		if(userOnZone.getName().equalsIgnoreCase(user.getName()) && userOnZone.getCustomData().equals(user.getCustomData()))
-                        		{
-                                    iter.remove();
-                        	      
-                        		}
-                        	}
+       
         System.out.println("User Removed By User : " + user.getName() +" ("+String.valueOf(ChatServerAdaptor.users.size())+")");
     }
     @Override  
@@ -46,28 +36,24 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         	 	new Thread(new Runnable() {  
                 public void run() {      
                     
-                            Iterator<IUser> iter = ChatServerAdaptor.users.iterator();
+                            Iterator<IUser> iter = ChatServerAdaptor.zone.getUsers().iterator();
                 	        while(iter.hasNext()) {
                         		IUser userOnZone = iter.next();
                         		if(userOnZone.getName().equalsIgnoreCase(user.getName()))
                         		{
                         		    ChatServerAdaptor.zone.sendAddUserResponse(userOnZone, WarpResponseResultCode.CONNECTION_ERR, "Auth Error Recoverable");  
-                        	        ChatServerAdaptor.removeUser(userOnZone);
+                        		    ChatServerAdaptor.zone.removeUser(userOnZone);
                         	        iter.remove();
                         	      
                         		}
                         	}
                         	
-                    //	 System.out.println("Total Users : " + String.valueOf(ChatServerAdaptor.users.size()));    
-                    //	
-                        ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
-                        ChatServerAdaptor.users.add(user);    
+                             ChatServerAdaptor.zone.sendAddUserResponse(user, WarpResponseResultCode.SUCCESS, "Auth success on server");  
+                       
                
                 }  
             }).start();  
         	 result.code = WarpResponseResultCode.AUTH_PENDING;  
-        //	  System.out.println("User PENDING");
-    	 //
     }  
     
      @Override  
