@@ -36,7 +36,7 @@ public class ChatZoneAdaptor extends BaseZoneAdaptor {
         	 	new Thread(new Runnable() {  
                 public void run() {      
                     	boolean dupe=false;
-                    	IUser userToRemove;
+                    	IUser userToRemove=null;
                             Iterator<IUser> iter = ChatServerAdaptor.zone.getUsers().iterator();
                 	        while(iter.hasNext()) {
                         		IUser userOnZone = iter.next();
