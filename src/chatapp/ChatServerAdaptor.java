@@ -25,19 +25,5 @@ public static List<IUser> users = new ArrayList<IUser>();
         
     }
     
-    public static void removeUser(IUser user)
-    {
-    	 try
-          {
-             zone.removeUser(user);
-          }
-          catch(Exception ex)
-          {
-              
-          }
- 	
- //	users.remove(user);
-   	 // System.out.println("User Removed : "+user.getName());
-    
-    }
+   
 }
